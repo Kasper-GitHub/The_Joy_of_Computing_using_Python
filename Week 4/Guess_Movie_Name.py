@@ -1,7 +1,7 @@
 import random
 import numpy as np
 
-movie_list = ["INCEPTION", "INTERSTELLER","GLADIATOR","PARASITE","JOKER", "SPIDERMAN"]
+movie_list = ["INCEPTION", "INTERSTELLAR","GLADIATOR","PARASITE","JOKER","SUPERMAN","TITANIC","AVATAR","MINIONS","BATMAN"]
 
 def get_random_movie(movie_list):
     return random.choice(movie_list)
@@ -53,13 +53,12 @@ def conclusion(player_name,movie,attempt,movie_dashed):
     else:
         score = 10
 
-    print("Your Score = ",score, " on a scale of 10.")
-    print("Thank you for playing!")
+    print("Your Score = ",score, " on a scale of 10.\n\n")
 
 def action_control(movie,pos,movie_dashed,status):
     print("Current Status : ", end=' ')
     print(' '.join(map(str, movie_dashed)))
-    action = input("\nWhat do you want to do? \n1. Guess Letter\t\t 2. Guess Movie Name\n")
+    action = input("\nWhat do you want to do? \n1. Guess Letter\t\t 2. Guess Movie Name\nEnter your choice : ")
     if action == "1":
         z = input("Guess Letter : ").upper()
         info = guess_letter(z,movie,pos,movie_dashed)
@@ -75,19 +74,27 @@ def action_control(movie,pos,movie_dashed,status):
         action_control(movie,pos,movie_dashed,status)
     return status,pos,movie_dashed
 
-movie = np.array(list(get_random_movie(movie_list)))
-movie_dashed = np.array(list("_"*len(movie)))
-status = False
-attempt = 0
-pos = np.array([])
-player = greeting(movie)
+def gamePlay():
+    movie = np.array(list(get_random_movie(movie_list)))
+    movie_dashed = np.array(list("_" * len(movie)))
+    status = False
+    attempt = 0
+    pos = np.array([])
+    player = greeting(movie)
 
-while(status == False):
-    attempt += 1
-    print("\nAttempt Counter : ", attempt)
-    control = action_control(movie,pos,movie_dashed,status)
-    status = control[0]
-    pos = control[1]
-    movie_dashed = control[2]
+    while (status == False):
+        attempt += 1
+        print("\nAttempt Counter : ", attempt)
+        control = action_control(movie, pos, movie_dashed, status)
+        status = control[0]
+        pos = control[1]
+        movie_dashed = control[2]
 
-conclusion(player,movie,attempt,movie_dashed)
+    conclusion(player, movie, attempt, movie_dashed)
+    playAgain = input("Do you want to play again?\n1. Yes\t\t 2. No\nEnter your choice : ")
+    if playAgain == "1":
+        gamePlay()
+    else:
+        print("Thank you for playing! Have a good day!")
+
+gamePlay()
