@@ -8,7 +8,7 @@ def get_random_movie(movie_list):
 
 def greeting(movie):
     player_name = input("What is your name? ")
-    print("\nHello, " + player_name, "! Welcome to Guess Movie Name!")
+    print("\nHello, " + player_name, "! Welcome to the Guess Movie Name Challenge!")
     print("I am thinking of a movie and I will give you a chance to guess.\n")
     print("Rules and Regulations : ")
     print("1. You will be given the number of letters in the movie to guess.")
