@@ -43,7 +43,7 @@ while value <= n**2:
 
     value += 1
 
-print("Magic Square of order ",n," is ")
+print("Magic Square of order ",n," is")
 print(np.matrix(magic_square))
 print("Sum of terms column-wise : ",np.sum(magic_square, axis = 0, dtype = int))
 print("Sum of terms row-wise : ",np.sum(magic_square, axis = 1, dtype = int))
