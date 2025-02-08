@@ -42,6 +42,7 @@ def conclusion(player_name,movie,attempt,movie_dashed):
     print("Well Played, ",player_name,"!")
     print("Finally you guessed the movie name correctly. It's ", end='')
     print(''.join(map(str, movie))," !")
+
     guessometer = len(np.where(movie_dashed == "_")[0])
     if guessometer == 0:
         score = 4 - attempt/len(movie)
@@ -51,8 +52,8 @@ def conclusion(player_name,movie,attempt,movie_dashed):
         score = 10 - attempt / len(movie)
     else:
         score = 10
-    score = 2*(5 - attempt/len(movie))
-    print("Your Score = ",score)
+
+    print("Your Score = ",score, " on a scale of 10.")
     print("Thank you for playing!")
 
 def action_control(movie,pos,movie_dashed,status):
