@@ -5,8 +5,8 @@ symbols = list(string.ascii_letters)
 same_symbol = random.choice(symbols)
 symbols.remove(same_symbol)
 
-pos1=random.randint(0,4)
-pos2=random.randint(0,4)
+pos1 = random.randint(0,4)
+pos2 = random.randint(0,4)
 
 card1 = [0,0,0,0,0]
 card2 = [0,0,0,0,0]
