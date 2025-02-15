@@ -11,5 +11,13 @@ while j < n:
 
 distribution = dict(zip(word_chunk, frequency))
 
-for key, value in distribution.items():
+store = list(distribution.items())
+
+for i in range(len(store)-1):
+    key = store[i][0]
+    value = store[i][1]
     print(f"{key}: {value}")
+
+key = store[len(store)-1][0]
+value = store[len(store)-1][1]
+print(f"{key}: {value}", end="")
