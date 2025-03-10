@@ -43,8 +43,7 @@ def roll_dice():
     print("The dice rolled is: ", val)
     return val
 
-
-ladders = {4: 13, 25: 46, 33: 49, 42: 63, 50: 69, 62: 81, 74: 92}
+ladders = {4: 25, 13: 46, 33: 49, 42: 63, 50: 69, 62: 81, 74: 92}
 snakes = {27: 5, 40: 3, 43: 18, 54: 31, 66: 45, 76: 58, 89: 53, 99: 41}
 
 def ladder_snake_checker(pre_pos):
