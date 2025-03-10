@@ -1,4 +1,5 @@
 import random
+from PIL import Image
 
 def greeting():
     player1_name = input("Player-1, What is your name? ")
@@ -99,6 +100,8 @@ def gamePlay():
     pos = [0, 0]
     display(pos, players)
     status = False
+
+    Image.open('board.png').show()
 
     while not status:
         status, player_stat = action_control(players, pos, status)
