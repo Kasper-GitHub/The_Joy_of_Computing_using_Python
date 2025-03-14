@@ -1,7 +1,7 @@
 import networkx as nx
 import matplotlib.pyplot as plt
 
-'''Reference = https://networkx.github.io/decumentation/networkx-1.10/reference/generators.html'''
+'''Reference = https://networkx.org/documentation/stable/reference/index.html'''
 
 '''Drawing Nodes & Edges'''
 G = nx.Graph()
@@ -30,7 +30,8 @@ nx.draw(H)
 plt.show()
 
 '''Drawing Random Graph'''
-K = nx.gnp_random_graph(20,0.2)
-plt.figure(2)
+K = nx.gnp_random_graph(10,0.5)
+print(nx.is_connected(K))
+plt.figure(3)
 nx.draw(K)
 plt.show()
